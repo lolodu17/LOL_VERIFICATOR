@@ -13,7 +13,8 @@ bot.on('guildMemberAdd', member => {
          let rol = member.guild.roles.find("name", "...")
           member.addRole(rol)
         channel.send("Bourjour, merci de bien répondre __correctement__ au questionnaire. \n Pour débuter le questionnaire faite !questionnaire")
-        if(member.content.startsWith('!questionnaire')){
+        var questionnaire = member.content.startsWith('!questionnaire');
+        if(questionnaire){
           channel.send("Bourjour, merci de bien répondre __correctement__ au questionnaire. \n Pour débuter le questionnaire faite !questionnaire")
         }else{
           channel.send("tant pis !")
