@@ -1,6 +1,7 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
 const client = new Discord.Client()
+const Questionnaire = require('questionnaire.js')
 
 bot.on("ready", function () {
   prefix = "!"
@@ -13,7 +14,7 @@ bot.on('guildMemberAdd', member => {
          let rol = member.guild.roles.find("name", "...")
           member.addRole(rol)
         channel.send("Bourjour, merci de bien répondre __correctement__ au questionnaire. \n Pour débuter le questionnaire faite !questionnaire")
-                Jeux.run(); 
+                Questionnaire.run(); 
       }).catch(console.error)
     })
 
