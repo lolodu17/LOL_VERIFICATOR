@@ -10,7 +10,15 @@ bot.on("ready", function () {
 
 bot.on('guildMemberAdd', member => {
       member.createDM().then(channel => {
-        channel.send("Bourjour tourgueuleoure")
+         let rol = member.guild.roles.find("name", "...")
+          member.addRole(rol)
+        channel.send("Bourjour, merci de bien répondre __correctement__ au questionnaire. \n Pour débuter le questionnaire faite !questionnaire")
+        if(member.content.startWith('!questionnaire')){
+          channel.send("Bourjour, merci de bien répondre __correctement__ au questionnaire. \n Pour débuter le questionnaire faite !questionnaire")
+        }else{
+          channel.send("tant pis !")
+}
+        
       }).catch(console.error)
     })
 
