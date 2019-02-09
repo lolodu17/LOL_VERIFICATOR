@@ -1,0 +1,33 @@
+{
+  "name": "LOL VERIFICATOR",
+  "version": "1.0.0",
+  "description": "LOL VERIFICATOR est un bot qui vérifie les membre du serveur pour remplir un formulaire avant de rentrer dans le groupe !",
+  "main": "index.js",
+  "engines": {
+    "node": "latest",
+    "npm": "latest"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ffmpeg": "^0.0.4",
+    "async": "^2.0.1",
+    "discord-anti-spam": "^1.1.1",
+    "discord.js": "^11.2.1",
+    "moment": "^2.15.0",
+    "opusscript": "0.0.6",
+    "fortnite": "^3.0.0",
+    "node-opus": "^0.2.7",
+    "youtube-search": "^1.0.10",
+    "ytdl-core": "^0.26.3",
+    "dateformat": "^3.0.3",
+    "request": "^2.74.0",
+    "snekfetch": "^4.0.4",
+    "jimp": "^0.5.4",
+    "canvas": "^2.0.1"
+  },
+  "devDependencies": {}
+}
