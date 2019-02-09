@@ -4,6 +4,7 @@ const client = new Discord.Client()
 
 bot.on("ready", function () {
   prefix = "!"
+  bot.user.setUsername('LOL VERIFICATOR™').catch(console.error)
 .then(user => console.log(`j'ai choisis mon avatar`))
 })
 
