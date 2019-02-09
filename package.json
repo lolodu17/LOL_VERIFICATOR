@@ -1,5 +1,5 @@
 {
-  "name": "LOL VERIFICATOR",
+  "name": "lolverificator",
   "version": "1.0.0",
   "description": "LOL VERIFICATOR est un bot qui vérifie les membre du serveur pour remplir un formulaire avant de rentrer dans le groupe !",
   "main": "index.js",
