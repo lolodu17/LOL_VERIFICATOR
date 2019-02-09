@@ -8,4 +8,12 @@ bot.on("ready", function () {
 .then(user => console.log(`j'ai choisis mon avatar`))
 })
 
+bot.on('guildMemberAdd', member => {
+      member.createDM().then(channel => {
+        channel.send("Bourjour tourgueuleoure")
+      }).catch(console.error)
+    })
+
+
+
 bot.login(process.env.TOKEN)
