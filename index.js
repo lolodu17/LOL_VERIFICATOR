@@ -20,9 +20,8 @@ bot.on('message', message => {
    message.delete();
   message.member.sendMessage("Avant de rejoindre la team tu doit répondre à un questionnaire te consérnant (les information ne sera distribuée à d'autre membre.")
   message.member.sendMessage("Fait la commande !ready pour remplir le questionnaire.\n\n tu as 15 seconde pour de répondre !")
-  const filter = message => message.content.startsWith("!ready")
-
-   message.channel.awaitMessages(filter, {max: 1, time: 15000, errors: ['time'] }).then(collected => {
+  const filter = message => message.author.id;
+message.channel.awaitMessages(filter, {max: 1, time: 15000, errors: ['time'] }).then(collected => {
    if(collected.first().content === "Nickname"){
    message.member.sendMessage("C'est parti !")
    }})
