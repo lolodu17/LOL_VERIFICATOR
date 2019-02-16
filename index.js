@@ -31,7 +31,7 @@ message.channel.awaitMessages(filter, {max: 1, time: 15000, errors: ['time'] }).
   
 })
 bot.on('message', message => {
-  if(message.content.startstWith("test")){
+  if(message.content.startsWith('!test')){
   const filter = message => message.content.startsWith('!vote');
 // Errors: ['time'] treats ending because of the time limit as an error
 message.channel.awaitMessages(filter, { max: 4, time: 60000, errors: ['time'] })
