@@ -26,7 +26,7 @@ bot.on('message', message => {
    if(collected.first().content === "Nickname"){
    message.member.sendMessage("C'est parti !")
    }})
-   }}else{
+   }else{
   
   }
   
