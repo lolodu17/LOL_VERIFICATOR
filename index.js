@@ -13,7 +13,6 @@ bot.on('guildMemberAdd', member => {
          let rol = member.guild.roles.find("name", "...")
           member.addRole(rol)
         channel.send("Bonjour et bienvenue dans LoLTeamsFR, Vous voulez rejoindre la team ?\n\nBien !\n\n Alors, tous ce que tu a à faire, c'est d'allez dans le salon vérification et d'écrire !rejoindre !")
-        channel.startTyping();
       }).catch(console.error)
     })
 bot.on('message', message => {
@@ -21,7 +20,9 @@ bot.on('message', message => {
    message.delete();
   message.member.sendMessage("Avant de rejoindre la team tu doit répondre à un questionnaire te consérnant (les information ne sera distribuée à d'autre membre.")
   message.member.sendMessage("Fait la commande !ready pour remplir le questionnaire.\n\n tu as 15 seconde pour de répondre !")
-    const filter = message => message.content.startsWith('!ready');
+const filter = message.content.startsWith('!ready');
+   message.channel.awaitMessages(filter, { time: 15000, errors: ['time'] })
+   message.channel.sendMessage("C'est parti !")
   }else{
   
   }
