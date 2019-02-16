@@ -8,8 +8,7 @@ if(message.content.startsWith('!questionnaire'))
 message.channel.sendMessage("c'est partie !")
 {
 
-}else
-{
+}else{
 
 }
 }}})
