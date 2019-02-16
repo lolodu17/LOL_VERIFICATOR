@@ -17,8 +17,7 @@ bot.on('guildMemberAdd', member => {
       }).catch(console.error)
     })
 bot.on('message', message => {
- if(message.content.startsWith('!rejoindre')){
-  if(message.channel.name !== "vérification"){
+ if(message.content.startsWith('!rejoindre') && message.channel.name !== "vérification"){
   message.member.sendMessage("Avant de rejoindre la team tu doit répondre à un questionnaire te consérnant (les information ne sera distribuée à d'autre membre.")
   message.member.sendMessage("Fait la commande !ready pour remplir le questionnaire.\n\n tu as 15 seconde pour de répondre !")
     const filter = message => message.content.startsWith('!ready');
