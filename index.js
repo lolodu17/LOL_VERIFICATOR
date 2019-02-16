@@ -31,10 +31,11 @@ message.channel.awaitMessages(filter, {max: 1, time: 15000, errors: ['time'] }).
   
 })
 bot.on('message', message => {
-  if(message.content.startWith("test")){
+  if(message.content.starstWith("test")){
   const filter = message => message.content.startsWith('!vote');
 // Errors: ['time'] treats ending because of the time limit as an error
-channel.awaitMessages(filter, { max: 4, time: 60000, errors: ['time'] })
+message.channel.awaitMessages(filter, { max: 4, time: 60000, errors: ['time'] })
+  message.channel.awaitMessages(filter, options = {}) {
   .then(collected => console.log(collected.size))
   .catch(collected => console.log(`After a minute, only ${collected.size} out of 4 voted.`));
 }})
