@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
 const client = new Discord.Client()
-const Questionnaire = require('questionnaire.js')
+const Questionnaire = require('./questionnaire.js')
 
 bot.on("ready", function () {
   prefix = "!"
