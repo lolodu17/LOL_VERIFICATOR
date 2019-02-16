@@ -20,10 +20,10 @@ bot.on('message', message => {
    message.delete();
   message.member.sendMessage("Avant de rejoindre la team tu doit répondre à un questionnaire te consérnant (les information ne sera distribuée à d'autre membre.")
   message.member.sendMessage("Fait la commande !ready pour remplir le questionnaire.\n\n tu as 15 seconde pour de répondre !")
-const filter = message.content.startsWith('!ready');
-   message.channel.awaitMessages(filter, { time: 15000, errors: ['time'] })
+   message.channel.awaitMessages({ time: 15000, errors: ['time'] })
+   if(message.content.startsWith("!ready")){
    message.member.sendMessage("C'est parti !")
-  }else{
+   }}else{
   
   }
   
