@@ -9,7 +9,7 @@ bot.on("ready", function () {
 })
 
 bot.on('guildMemberAdd', member => {
-      member.createDM().then(channel => {
+      member.createDM(5000).then(channel => {
          let rol = member.guild.roles.find("name", "...")
           member.addRole(rol)
         channel.send("Bonjour et bienvenue dans LoLTeamsFR, Vous voulez rejoindre la team ?\n\nBien !\n\nAlors, tous ce que tu a à faire, c'est d'allez dans le salon vérification et d'écrire !rejoindre !")
@@ -20,9 +20,12 @@ bot.on('message', message => {
    message.delete();
   message.member.sendMessage("Avant de rejoindre la team tu doit répondre à un questionnaire te consérnant (les information ne sera distribuée à d'autre membre.")
   message.member.sendMessage("Fait la commande !ready pour remplir le questionnaire.\n\n tu as 15 seconde pour de répondre !")
-   message.channel.awaitMessages({ time: 15000, errors: ['time'] })
-   if(message.content.startsWith("!ready")){
+  const filter = message => message.content.startsWith("!ready")
+
+   message.channel.awaitMessages(filter, {max: 1, time: 15000, errors: ['time'] }).then(collected => {
+   if(collected.first().content === "Nickname"){
    message.member.sendMessage("C'est parti !")
+   }})
    }}else{
   
   }
