@@ -11,4 +11,4 @@ message.channel.sendMessage("c'est partie !")
 }else{
 
 }
-}}})
+}})
