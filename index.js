@@ -22,7 +22,7 @@ bot.on('message', message => {
   message.member.sendMessage("Fait la commande !ready pour remplir le questionnaire.\n\n tu as 15 seconde pour de répondre !")
 const filter = message.content.startsWith('!ready');
    message.member.awaitMessages(filter, { time: 15000, errors: ['time'] })
-   message.awaitMessages(filter) {
+   message.awaitMessages(filter)
    message.member.sendMessage("C'est parti !")
   }else{
   
