@@ -4,7 +4,7 @@ const client = new Discord.Client()
 
 bot.on("ready", function () {
   prefix = "!"
-  bot.user.setUsername('LOL VERIFICATOR™').catch(console.error)
+  bot.user.setUsername('LoL VERIFICATOR').catch(console.error)
 .then(user => console.log(`j'ai choisis mon avatar`))
 })
 
@@ -21,7 +21,7 @@ bot.on('message', message => {
   message.member.sendMessage("Avant de rejoindre la team tu doit répondre à un questionnaire te consérnant (les information ne sera distribuée à d'autre membre.")
   message.member.sendMessage("Fait la commande !ready pour remplir le questionnaire.\n\n tu as 15 seconde pour de répondre !")
 const filter = message.content.startsWith('!ready');
-   message.awaitMessages(filter, { time: 15000, errors: ['time'] })
+   message.channel.awaitMessages(filter, { time: 15000, errors: ['time'] })
    message.member.sendMessage("C'est parti !")
   }else{
   
