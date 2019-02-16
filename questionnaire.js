@@ -5,6 +5,7 @@ const client = new Discord.Client()
 bot.on('message', message => {
 exports.run = () => {
 if(message.content.startsWith('!questionnaire'))
+message.channel.sendMessage("c'est partie !")
 {
 
 }else
