@@ -23,7 +23,10 @@ bot.on('message', message => {
   const filter = message => message.content.startsWith('!ready')
 message.channel.awaitMessages(filter, {max: 1, time: 30000, errors: ['time'] })
    .then(collected => console.log(collected.size))
-  .catch(collected => { if(!message.content.startsWith("!ready")){message.member.send('\n\nVous avez pas écrit à temps !\n\nVeuillez recommancer !')})
+  .catch(collected => {
+         if(!message.content.startsWith("!ready")){
+  message.member.sendMessage("\n\nVous avez pas écrit à temps !\n\nVeuillez recommancer !")
+         }})
    
    }else{
   
