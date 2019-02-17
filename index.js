@@ -19,11 +19,11 @@ bot.on('message', message => {
  if(message.content.startsWith('!rejoindre') && message.channel.name == "vérification"){
    message.delete();
   message.member.sendMessage("Avant de rejoindre la team tu doit répondre à un questionnaire te consérnant (les information ne sera distribuée à d'autre membre.")
-  message.member.sendMessage("Fait la commande !ready pour remplir le questionnaire.\n\n tu as 15 seconde pour de répondre !")
-  const filter = message => message.author.id;
-message.channel.awaitMessages(filter, {max: 1, time: 15000, errors: ['time'] })
+  message.member.sendMessage("\n\nFait la commande !ready pour remplir le questionnaire.\n\n tu as 30 seconde pour de répondre !")
+  const filter = message => message.content.startsWith('!ready')
+message.channel.awaitMessages(filter, {max: 1, time: 30000, errors: ['time'] })
    .then(collected => console.log(collected.size))
-  .catch(collected => message.member.sendMessage("C'est parti !"))
+  .catch(collected => { if(!message.content.startsWith("!ready")){message.member.send('\n\nVous avez pas écrit à temps !\n\nVeuillez recommancer !')})
    
    }else{
   
