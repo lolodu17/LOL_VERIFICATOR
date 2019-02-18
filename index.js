@@ -28,6 +28,7 @@ let verification = message.guild.channels.find(`name`, "vérification");
 if(!verification) return message.member.send("Je n'ai trouvé pas le salon 'vérification'");
   let rol = message.guild.roles.find("name", "...")
 verification.send(`@${rol.name}, ${message.author} va remplir le questionnaire !`)
+})
   .catch(collected => {
   message.member.sendMessage("\n\nVous avez pas écrit à temps !\n\nVeuillez recommancer !")
 })
