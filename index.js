@@ -17,18 +17,20 @@ bot.on('guildMemberAdd', member => {
     })
 bot.on('message', message => {
  if(message.content.startsWith('!rejoindre') && message.channel.name == "vérification"){
-   message.delete();
-  message.member.sendMessage("Avant de rejoindre la team tu doit répondre à un questionnaire te consérnant (les information ne sera distribuée à d'autre membre.)")
-  message.member.sendMessage("\n\nFait la commande !ready pour remplir le questionnaire.\n\nTu as 30 seconde pour de répondre !")
+   message.delete(message.author)
+  message.member.sendMessage("Avant de rejoindre la team tu doit répondre à un questionnaire te consérnant (les information ne sera distribuée à d'autre membre.).")
+  message.member.sendMessage("\n\n\nFaite la commande !ready pour remplir le questionnaire.\n\nTu as 1 minute pour de répondre !")
   const filter = message => message.content.startsWith('!ready')
-message.member.awaitMessages(filter, {max: 1, time: 30000, errors: ['time'] })
-   .then(collected => console.log(collected.size))
+message.channel.awaitMessages(filter, {max: 1, time: 30000, errors: ['time'] })
+   .then(collected => { 
+  message.delete(message.author)
+let verification = message.guild.channels.find(`name`, "vérification");
+if(!verification) return message.member.send("Je n'ai trouvé pas le salon 'vérification'");
+  let rol = message.guild.roles.find("name", "...")
+verification.send(`@${rol.name}, ${message.author} va remplir le questionnaire !`)
   .catch(collected => {
-         if(!message.content.startsWith !== "!ready"){
   message.member.sendMessage("\n\nVous avez pas écrit à temps !\n\nVeuillez recommancer !")
-         }else{
-         message.member.sendMessage("C'est parti, je vous envoie sa ...")
-         }})
+})
   
   
 }})
