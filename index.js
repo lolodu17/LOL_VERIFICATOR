@@ -16,10 +16,9 @@ bot.on('guildMemberAdd', member => {
     })
 bot.on('message', message => {
       const Ruby = "357912301216595971";
-const octokling = "490780128234831906"
-  
-  let espace = message.content.split(" ").slice(1);
-let envoie = espace.join(" ")
+const octokling = "490780128234831906";
+  const nm = "0";
+  let espace = message.content.split(" ").slice(1).join(" ");
  if(message.content.startsWith('!rejoindre') && message.channel.name == "vérification"){
    message.delete(message.author)
   message.member.sendMessage("Avant de rejoindre la team tu doit répondre à un questionnaire te consérnant (les information ne sera distribuée à d'autre membre.).\n\n")
@@ -33,21 +32,23 @@ let verification = message.guild.channels.find(`name`, "vérification");
 if(!verification) return message.member.send("Je n'ai trouvé pas le salon 'vérification'");
   let rol = message.guild.roles.find("name", "...")
 verification.send(`@${rol.name}, ${message.author} va remplir le questionnaire !`)
-})
-   .catch(collected => {
-  message.member.sendMessage("\n\nVous avez pas écrit à temps !\n\nVeuillez recommancer !")
-})
   message.member.send("Comment vous appelez vous ?\n\nQuelle est pseudo dans le jeu ?\n\nQuelle âge avaient vous ?\n\nPourquoi avez vous rejoint le serveur ?\n\nQuelle est votre personnage favoris (celui que vous utiliser tout le temps) dans le jeu ?\n\nQuelle niveau êtes vous dans le jeu ?\n\nVous seriez interresser si on organise des événement sur ce serveur consénant le jeu ?\n\nVous avez un Ordinateur faible ; puissant ; gameur ?\n\nVous avez 30 minute pour répondre !")
-  const filtrer = message.content.startsWith(`${envoie}`)
+ const filtrer = message.content.startsWith(`!questionnaire`)
 message.channel.awaitMessages(filtrer, {max: 1, time: 1800000, errors: ['time'] })
-.then(collected => {
+  .then(collected => {
 message.member.send("Merci d'avoir pris temps de nous répondre, nos modérateur vont certifier votre questionnaire !")
-message.guild.member(octokling).send(`${envoie}`)
+message.guild.member(octokling).send(`${espace}`)
 })
     .catch(collected => {
 message.member.send("Vous n'avait répondue au questionnaire à temps vous devez tout recommencer !")
 })
-   
+})
+   .catch(collected => {
+  message.member.sendMessage("\n\nVous avez pas écrit à temps !\n\nVeuillez recommancer !")
+})
+  
+
+
   
 
 }})
