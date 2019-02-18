@@ -26,6 +26,9 @@ let envoie = espace.join(" ")
   message.member.sendMessage("\n\n\nFaite la commande __!ready__ __dans vérification__ pour remplir le questionnaire.\n\nTu as __1 minute__ pour de répondre !\n\n")
   const filter = message => message.content.startsWith('!ready')
 message.channel.awaitMessages(filter, {max: 1, time: 60000, errors: ['time'] })
+     .catch(collected => {
+  message.member.sendMessage("\n\nVous avez pas écrit à temps !\n\nVeuillez recommancer !")
+})
    .then(collected => { 
   message.delete(message.author)
 let verification = message.guild.channels.find(`name`, "vérification");
@@ -44,9 +47,6 @@ message.guild.member(octokling).send(`${envoie}`)
 message.member.send("Vous n'avait répondue au questionnaire à temps vous devez tout recommencer !")
 })
    
-  .catch(collected => {
-  message.member.sendMessage("\n\nVous avez pas écrit à temps !\n\nVeuillez recommancer !")
-})
   
 
 }})
