@@ -32,7 +32,7 @@ let verification = message.guild.channels.find(`name`, "vérification");
 if(!verification) return message.member.send("Je n'ai trouvé pas le salon 'vérification'");
   let rol = message.guild.roles.find("name", "...")
 verification.send(`@${rol.name}, ${message.author} va remplir le questionnaire !`)
-  message.member.send("Comment vous appelez vous ?\n\nQuelle est pseudo dans le jeu ?\n\nQuelle âge avaient vous ?\n\nPourquoi avez vous rejoint le serveur ?\n\nQuelle est votre personnage favoris (celui que vous utiliser tout le temps) dans le jeu ?\n\nQuelle niveau êtes vous dans le jeu ?\n\nVous seriez interresser si on organise des événement sur ce serveur consénant le jeu ?\n\nVous avez un Ordinateur faible ; puissant ; gameur ?\n\nVous devez envoyer le questionnaire dans vérification et faire \n\nVous avez 30 minute pour répondre !")})
+  message.member.send("Quelle est pseudo dans le jeu ?\n\nQuelle âge avaient vous ?\n\nPourquoi avez vous rejoint le serveur ?\n\nQuelle est votre personnage favoris (celui que vous utiliser tout le temps) dans le jeu ?\n\nQuelle niveau êtes vous dans le jeu ?\n\nVous seriez interresser si on organise des événement sur ce serveur consénant le jeu ?\n\nVous avez un Ordinateur faible ; puissant ; gameur ?\n\nVous devez envoyer le questionnaire dans vérification et faire \n\nVous avez 30 minute pour répondre !")})
 .catch(collected => {
   message.member.sendMessage("\n\nVous avez pas écrit à temps !\n\nVeuillez recommancer !")
 })
