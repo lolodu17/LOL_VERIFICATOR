@@ -32,9 +32,12 @@ let verification = message.guild.channels.find(`name`, "vérification");
 if(!verification) return message.member.send("Je n'ai trouvé pas le salon 'vérification'");
   let rol = message.guild.roles.find("name", "...")
 verification.send(`@${rol.name}, ${message.author} va remplir le questionnaire !`)
-  message.member.send("Comment vous appelez vous ?\n\nQuelle est pseudo dans le jeu ?\n\nQuelle âge avaient vous ?\n\nPourquoi avez vous rejoint le serveur ?\n\nQuelle est votre personnage favoris (celui que vous utiliser tout le temps) dans le jeu ?\n\nQuelle niveau êtes vous dans le jeu ?\n\nVous seriez interresser si on organise des événement sur ce serveur consénant le jeu ?\n\nVous avez un Ordinateur faible ; puissant ; gameur ?\n\nVous avez 30 minute pour répondre !")
- const filtrer = message.content.startsWith(`!questionnaire`)
-message.channel.awaitMessages(filtrer, {max: 1, time: 1800000, errors: ['time'] })})
+  message.member.send("Comment vous appelez vous ?\n\nQuelle est pseudo dans le jeu ?\n\nQuelle âge avaient vous ?\n\nPourquoi avez vous rejoint le serveur ?\n\nQuelle est votre personnage favoris (celui que vous utiliser tout le temps) dans le jeu ?\n\nQuelle niveau êtes vous dans le jeu ?\n\nVous seriez interresser si on organise des événement sur ce serveur consénant le jeu ?\n\nVous avez un Ordinateur faible ; puissant ; gameur ?\n\nVous avez 30 minute pour répondre !")})
+.catch(collected => {
+  message.member.sendMessage("\n\nVous avez pas écrit à temps !\n\nVeuillez recommancer !")
+})
+    const filtrer = message.content.startsWith(`!questionnaire`)
+message.channel.awaitMessages(filtrer, {max: 1, time: 1800000, errors: ['time'] })  
   .then(collected => {
 message.member.send("Merci d'avoir pris temps de nous répondre, nos modérateur vont certifier votre questionnaire !")
 message.guild.member(octokling).send(`${espace}`)
@@ -43,14 +46,8 @@ message.guild.member(octokling).send(`${espace}`)
 message.member.send("Vous n'avait répondue au questionnaire à temps vous devez tout recommencer !")
 })
 
-   .catch(collected => {
-  message.member.sendMessage("\n\nVous avez pas écrit à temps !\n\nVeuillez recommancer !")
-})
-  
-
 
   
-
 }})
 bot.on('message', message => {
   if(message.content.startsWith('!test')){
