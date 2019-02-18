@@ -26,7 +26,9 @@ message.channel.awaitMessages(filter, {max: 1, time: 30000, errors: ['time'] })
   .catch(collected => {
          if(!message.content.startsWith !== "!ready"){
   message.member.sendMessage("\n\nVous avez pas écrit à temps !\n\nVeuillez recommancer !")
-         }})
+         }else{
+         message.member.sendMessage("C'est parti, je vous envoie sa ...")
+         })
    
    }else{
   
