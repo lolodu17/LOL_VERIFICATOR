@@ -21,7 +21,7 @@ bot.on('message', message => {
   message.member.sendMessage("Avant de rejoindre la team tu doit répondre à un questionnaire te consérnant (les information ne sera distribuée à d'autre membre.)")
   message.member.sendMessage("\n\nFait la commande !ready pour remplir le questionnaire.\n\nTu as 30 seconde pour de répondre !")
   const filter = message => message.content.startsWith('!ready')
-message.channel.awaitMessages(filter, {max: 1, time: 30000, errors: ['time'] })
+message.member.awaitMessages(filter, {max: 1, time: 30000, errors: ['time'] })
    .then(collected => console.log(collected.size))
   .catch(collected => {
          if(!message.content.startsWith !== "!ready"){
