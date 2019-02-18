@@ -22,7 +22,7 @@ const octokling = "490780128234831906";
  if(message.content.startsWith('!rejoindre') && message.channel.name == "vérification"){
    message.delete(message.author)
   message.member.sendMessage("Avant de rejoindre la team tu doit répondre à un questionnaire te consérnant (les information ne sera distribuée à d'autre membre.).\n\n")
-  message.member.sendMessage("\n\n\nFaite la commande __!ready__ __dans vérification__ pour remplir le questionnaire.\n\nTu as __1 minute__ pour de répondre !\n\n")
+  message.channel.sendMessage("\n\n\nFaite la commande __!ready__ __dans vérification__ pour remplir le questionnaire.\n\nTu as __1 minute__ pour de répondre !\n\n")
   const filter = message => message.content.startsWith('!ready')
 message.member.awaitMessages(filter, {max: 1, time: 60000, errors: ['time'] })
      
