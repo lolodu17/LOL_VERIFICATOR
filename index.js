@@ -10,15 +10,19 @@ bot.on("ready", function () {
 
 bot.on('message', message => {
   var name = ("")
+   let lol = message.content.split(" ");
+        let loll = test.slice(1);
+        let llooll = testinfo.join(" ").slice(0)
     if(message.content.startsWith("!Prêt") && message.channel.name == "vérification"){
         let test = message.content.split(" ");
         let testinfo = test.slice(1);
         let pseudo = testinfo.join(" ").slice(0)
         message.member.send(`Quelle est votre nom dans League of Leagend ?`)
-    }
-      if(message.content.startsWith(pseudo)){
-        name = (`${pseudo}`)
+    
       
+        name = (`${pseudo}`)
+    }
+      if(message.content.startsWith(llooll)){
  var joueur_embed = new Discord.RichEmbed()
         .setColor("#00CB0E")
         .setTitle(`Nouveau membre : ${message.author.username}`)
