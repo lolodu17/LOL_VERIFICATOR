@@ -10,7 +10,7 @@ bot.on("ready", function () {
 
 bot.on('message', message => {
   var name = ("")
-    if(message.content.startsWith("!Prêt") && message.channel.name == "vérification")){
+    if(message.content.startsWith("!Prêt") && message.channel.name == "vérification"){
         let test = message.content.split(" ");
         let testinfo = test.slice(1);
         let pseudo = testinfo.join(" ").slice(0)
