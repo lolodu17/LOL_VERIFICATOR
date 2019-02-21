@@ -15,6 +15,7 @@ bot.on('message', message => {
         let testinfo = test.slice(1);
         let pseudo = testinfo.join(" ").slice(0)
         message.member.send(`Quelle est votre nom dans League of Leagend ?`)
+    }
       if(message.content.startsWith(pseudo)){
         name = (`${pseudo}`)
       
@@ -25,7 +26,7 @@ bot.on('message', message => {
         .setFooter("Bienvenue à lui !")
         message.member.send(joueur_embed)
 
-    }}})
+    }})
 bot.on('guildMemberAdd', member => {
       member.createDM(5000).then(channel => {
          let rol = member.guild.roles.find("name", "...")
