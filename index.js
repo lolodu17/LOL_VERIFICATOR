@@ -15,7 +15,7 @@ bot.on('message', message => {
         let testinfo = test.slice(1);
         let pseudo = testinfo.join(" ").slice(0)
         message.member.send(`Quelle est votre nom dans League of Leagend ?`)
-      
+      if(message.content.startsWith(pseudo)){
         name = (`${pseudo}`)
       
  var joueur_embed = new Discord.RichEmbed()
@@ -24,6 +24,7 @@ bot.on('message', message => {
         .addField("Prénom :",`${name} .`)
         .setFooter("Bienvenue à lui !")
         message.member.send(joueur_embed)
+
     }})
 bot.on('guildMemberAdd', member => {
       member.createDM(5000).then(channel => {
