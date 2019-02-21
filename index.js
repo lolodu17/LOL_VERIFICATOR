@@ -14,7 +14,7 @@ bot.on('message', message => {
         
         if(message.author.bot) return;
         let role = message.guild.roles.find("name", "Membre");
-        if(message.member.roles.has(role.id)) return 
+        if(message.member.roles.has) return 
         let test = message.content.split(" ");
         let testinfo = test.slice(1);
         let pseudo = testinfo.join(" ").slice(0)
