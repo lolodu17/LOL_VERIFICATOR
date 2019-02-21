@@ -20,8 +20,8 @@ bot.on('message', message => {
       
  var joueur_embed = new Discord.RichEmbed()
         .setColor("#00CB0E")
-        .setTitle(`Nouveau joueur | ${message.author.username}`)
-        .addField("Prénom :",`${name}`)
+        .setTitle(`Nouveau membre : ${message.author.username}`)
+        .addField("Prénom :",`${name} .`)
         .setFooter("Bienvenue à lui !")
         message.member.send(joueur_embed)
     }})
