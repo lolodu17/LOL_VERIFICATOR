@@ -28,7 +28,7 @@ bot.on('message', message => {
         .addField("Prénom :",`${name}`)
         .setFooter("Bienvenue à lui !")
         message.member.send(joueur_embed)
-})
+    }})
 bot.on('guildMemberAdd', member => {
       member.createDM(5000).then(channel => {
          let rol = member.guild.roles.find("name", "...")
