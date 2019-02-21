@@ -11,8 +11,8 @@ bot.on("ready", function () {
 bot.on('message', message => {
   var name = ("")
    let lol = message.content.split(" ");
-        let loll = test.slice(1);
-        let llooll = testinfo.join(" ").slice(0)
+        let loll = lol.slice(1);
+        let llooll = loll.join(" ").slice(0)
     if(message.content.startsWith("!Prêt") && message.channel.name == "vérification"){
         let test = message.content.split(" ");
         let testinfo = test.slice(1);
